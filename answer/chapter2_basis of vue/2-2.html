@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <title>データバインディング(vueの核となる機能)</title>
 <script src="../../js/vue.js"></script>
-
 <div id="app">
-  <p>{{ message }}</p>
+  <p>{{ items[0].name }}</p>
 </div>
 <script>
-  // ロードされてVueがグローバル変数として定義されているか確認
-  console.assert(typeof Vue !== "undefined");
-  new Vue({
+  var items = [
+    {
+      name: "pencil",
+      price: 300,
+      quantity: 0
+    },
+    {
+      name: "notebook",
+      price: 400,
+      quantity: 0
+    },
+    {
+      name: "eraser",
+      price: 500,
+      quantity: 0
+    },
+  ]
+  var vm = new Vue({
     el: "#app",
-    data: {message: "こんちには"}
-  });
+    data: {items: items}
+  })
 </script>
