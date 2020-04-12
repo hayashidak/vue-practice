@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<title>vue.jsの基本</title>
+<script src="../../js/vue.js"></script>
+
+<div id="app">
+  <p>{{ message }}</p>
+</div>
+<script>
+  // ロードされてVueがグローバル変数として定義されているか確認
+  console.assert(typeof Vue !== "undefined");
+  //データバインディング(vueの核となる機能)
+  new Vue({
+    el: "#app",
+    data: {message: "こんちには"}
+  });
+</script>
