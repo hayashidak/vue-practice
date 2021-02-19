@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 開発バージョン、便利なコンソールの警告が含まれています -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="fig = !flg">表示切替</button>
+        <p v-if="flg">
+            methods: {{method()}} <br />
+            computed: {{prop}}
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                flg: true
+            },
+            methods: {
+                method() {
+                    return new Date().toLocaleString();
+                }
+            },
+            computed: {
+                prop() {
+                    return new Date().toLocaleString();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
